@@ -1,9 +1,8 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import ArrowRightRoundedIcon from "@mui/icons-material/ArrowRightRounded";
-import ArrowLeftRoundedIcon from "@mui/icons-material/ArrowLeftRounded";
-import CircleIcon from "@mui/icons-material/Circle";
 import "./FeaturedSneakers.css";
+import 'react-slideshow-image/dist/styles.css'
+import { Fade } from 'react-slideshow-image';
 
 function ImageSlider({ text, images, delay }) {
   const [index, setIndex] = useState(0);
@@ -29,24 +28,25 @@ function ImageSlider({ text, images, delay }) {
   }
 
   return (
-    <div className="slider">
-        {images.map((slide, idx) => {
-          return (
-            <div className={`slider-item ${
-              idx === index ? "" : idx < index ? "previous" : "next"
-            }`}>
-              <img
-              key={idx}
-              src={slide.image}
-              alt="travel image"
-              className='image'
-              style={{width:"25rem"}}
-              />
+    <Fade
+    className="fade-div"
+    duration = "2500"
+    indicators = {true}
+    autoplay = {true}
+    arrows = {true}
+    dynamicHeight={true}
+    >
+      {images.map ((img, idx) => {
+        return (
+          <div className="each-slide">
+            <div style={{ backgroundImage: `url(${img.image})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: "center" }}>
+            <span>{text[idx]}</span>
             </div>
-          );
-        })}
-    </div>
-  );
+            </div>
+        )
+      })}
+    </Fade>
+  )
 }
 
 export default ImageSlider;

@@ -1,104 +1,44 @@
-.slider {
-    position: relative;
+ .each-slide {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    border-radius: 0.25rem;
-}
-
-.slider-item{
-    position:absolute;
-    top: 0;
-    left: 0;
-    transition: left 0.5s;
-    object-fit: cover;
-}
-
-.image{
-    border-radius: 0%;
-    transition: left 0.5s;
+    height: 50vh;
+  }
+  
+  .each-slide>div {
+    width: 1000%;
+    height: 50vh;
+    margin-top: 1rem;
+  }
+  
+  .each-slide>div img {
     width: 100%;
-}
-
-.slider-item.next{
-    left: 100%;
-    transform: translateX(100);
-    -webkit-transform: translateX(100%);
-}
-
-.slider-item.previous{
-    left: -100%;
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-}
-
-.slider-text {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4vh;
+    height: 100%;
+    object-fit: co;
+  }
+  
+  .each-slide p {
+    width: 25%;
+    font-size: 1em;
+    display: flex;
     text-align: center;
-    font-family: Roboto;
-    color: rgb(255, 255, 255);
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
-}
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: #adceed;
+  }
 
-.image{
-    width: 100%;
-    min-width: 60%;
-    border-radius: 10px;
-}
+  .each-slide span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+    font-family: Nunito;
+  }
 
-.right-arrow {
-    position: absolute;
-    top: 50%;
-    right: 2rem;
-    font-size: 3rem;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-    color:rgb(201, 211, 211);;
-}
-
-.left-arrow {
-    position: absolute;
-    top: 50%;
-    left: 2rem;
-    font-size: 3rem;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-    color:rgb(201, 211, 211);;
-
-}
-
-.slide {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.slide.active{
-    opacity: 1;
-    transition-duration: 1s;
-}
-
-.jumpto-wrap{
-    position: absolute;
-    padding: 1rem 0 0;
-    bottom: 1rem;
-    right: 1rem;
-}
-
-.jumpto-btn{
-    font-size: 3rem;
-    cursor: pointer;
-    user-select: none;
-    color:rgb(201, 211, 211);;
-}
-
-.jumpto-btn.active{
-    color: antiquewhite;
-}
+  .each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+  }

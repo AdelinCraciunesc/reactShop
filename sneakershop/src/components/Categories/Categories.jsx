@@ -29,7 +29,7 @@ export default function Categories() {
       alignItems="stretch"
       spacing={1} 
       sx={{
-      mt:45,
+      mt:-2,
       borderRadius: 2,
     }}>
       {cardInfo.map((card, idx) => {

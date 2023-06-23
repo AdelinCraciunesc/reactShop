@@ -9,48 +9,48 @@ import HotSneakers from "./components/HotSneakers/HotSneakers";
 const App = () => {
   const SliderImages = [
     {
-      image:"https://i.imgur.com/vuQoEza.jpg"
+      image: "https://i.imgur.com/vuQoEza.jpg"
     },
     {
-      image:"https://i.imgur.com/5lFFjqk.jpg"
+      image: "https://i.imgur.com/5lFFjqk.jpg"
     },
     {
-      image:"https://i.imgur.com/5J8t6Ul.jpg"
+      image: "https://i.imgur.com/5J8t6Ul.jpg"
     }
   ];
   const Sneakers = [
-      {
-        name:"Adidas",
-        Model: "Adidas Yeezy",
-        image:"https://sizeer.ro/media/cache/gallery/rc/eh0k21eq/adidas-treziod-2-barbati-sneakers-verde-gy0045.jpg",
-        size: [41,42,43],
-        price: 200,
-        brand: "https://www.freepnglogos.com/uploads/adidas-logo-png-black-0.png"
-      },
-      {
-        name:"Nike",
-        Model: "Nike Air Jordan",
-        image:"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/23696ebc-18fc-46f9-8a88-c854930ad24c/air-jordan-1-retro-high-shoes-HMVqph.png",
-        size: [41,42,43],
-        price: 200,
-        brand: "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png"
-      },
-      {
-        name:"Nike",
-        Model: "Nike Air Jordan",
-        image:"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/23696ebc-18fc-46f9-8a88-c854930ad24c/air-jordan-1-retro-high-shoes-HMVqph.png",
-        size: [41,42,43],
-        price: 200,
-        brand: "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png"
-      },
-      {
-        name:"Nike",
-        Model: "Nike Air Jordan",
-        image:"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/23696ebc-18fc-46f9-8a88-c854930ad24c/air-jordan-1-retro-high-shoes-HMVqph.png",
-        size: [41,42,43],
-        price: 200,
-        brand: "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png"
-      },
+    {
+      name: "Abibas",
+      Model: "YeezyV1",
+      image: "https://sneakerindustry.ro/100093-product_cover/x-psg-air-200e.jpg",
+      size: ["41, 42"],
+      price: 120,
+      brand: "https://www.freepnglogos.com/uploads/adidas-logo-png-black-0.png"
+    },
+    {
+      name: "Nikecss",
+      Model: "Voosh",
+      image: "https://sneakerindustry.ro/102393-product_cover/slipstream-always-on.jpg",
+      size: ["40, 42, 45"],
+      price: 80,
+      brand: "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png"
+    },
+    {
+      name: "Filandro",
+      Model: "Armonica",
+      image: "https://sneakerindustry.ro/102839-product_cover/oznova.jpg",
+      size: ["41, 42, 43"],
+      price: 175,
+      brand: "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png"
+    },
+    {
+      name: "Onomastik",
+      Model: "Taro",
+      image: "https://sneakerindustry.ro/104998-product_cover/x-mercedes-rs-x.jpg",
+      size: ["41, 42, 45"],
+      price: 250,
+      brand: "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png"
+    },
   ]
 
   const delay = 4000;
@@ -64,7 +64,7 @@ const App = () => {
         <FeaturedSneakers images={SliderImages} delay={delay} text={text} />
       </div>
       <Categories />
-      <HotSneakers sneakers={Sneakers}/>
+      <HotSneakers sneakers={Sneakers} />
     </div>
   );
 };

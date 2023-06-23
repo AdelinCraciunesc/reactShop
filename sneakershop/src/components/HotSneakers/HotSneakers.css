@@ -1,4 +1,13 @@
 .hotsneakers-div {
     display: flex;
+    text-align: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    font-family: Inter;
+}
+
+.badge {
+    position: absolute;
+    top: -15rem;
 }

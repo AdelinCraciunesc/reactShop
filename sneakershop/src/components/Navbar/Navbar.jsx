@@ -12,8 +12,9 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { ShoppingCart } from '@mui/icons-material';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import Badge from '@mui/material/Badge';
 
-function Navbar() {
+function Navbar({ cartItems, setCartItems }) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
@@ -135,11 +136,20 @@ function Navbar() {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <IconButton sx={{ p: 0 }}>
-                            <ShoppingCart
-                                style={{ color: 'white' }}
-                            />
-                        </IconButton>
+                        {cartItems > 0 ? <Badge badgeContent={cartItems} color="primary">
+                            <IconButton sx={{ p: 0 }}>
+                                <ShoppingCart
+                                    style={{ color: 'white' }}
+                                />
+                            </IconButton>
+                        </Badge>
+                            :
+                            <IconButton sx={{ p: 0 }}>
+                                <ShoppingCart
+                                    style={{ color: 'white' }}
+                                />
+                            </IconButton>
+                        }
                     </Box>
                 </Toolbar>
             </Container>

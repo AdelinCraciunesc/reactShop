@@ -9,8 +9,16 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import "./HotSneakers.css";
 import Badge from '@mui/material/Badge';
+import { Button } from "@mui/material";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import IconButton from '@mui/material/IconButton';
 
-export default function HotSneakers({ sneakers }) {
+export default function HotSneakers({ sneakers, cartItems, setCartItems }) {
+
+  function addToCart() {
+    setCartItems(cartItems + 1);
+  }
+  ///////////////// FA COMPONENTA CARD BAAAAAAAAAAAAAAAAAAA ////////////////////////
   return (
     <div className="hotsneakers-div">
       <h1>Hot sneakers on sale!</h1>
@@ -46,7 +54,7 @@ export default function HotSneakers({ sneakers }) {
                 />
                 <Badge
                   className="badge"
-                  badgeContent="Reduced"
+                  badgeContent="Sale"
                   color="error"
                   style={{ fontSize: "3rem" }}
                 />
@@ -75,6 +83,28 @@ export default function HotSneakers({ sneakers }) {
                   >
                     {sneaker.price} €
                   </Typography>
+                  <Button sx={{
+                    mt: 2,
+                    ":hover": {
+                      bgcolor: "#9ec3ff",
+                      color: "white"
+                    }
+                  }}
+                    variant="text"
+                    color="primary"
+                    aria-label="add to shopping cart"
+                    size="small"
+                    onClick={addToCart}
+                  >
+                    <Typography
+                      fontSize={"1rem"}
+                      fontFamily="Nunito"
+                      mr={1}
+                    >
+                      Add to cart
+                    </Typography>
+                    <AddShoppingCartIcon />
+                  </Button>
                 </CardContent>
               </Card>
             </Grid>

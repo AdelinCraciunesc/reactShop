@@ -139,7 +139,7 @@ function Navbar({ cartItems, setCartItems }) {
                     <Box sx={{ flexGrow: 0 }}>
                         {cartItems > 0 ? <Badge badgeContent={cartItems} color="primary">
                             <IconButton sx={{ p: 0 }}>
-                                <Link to="/cart">            
+                                <Link to="/cart">
                                     <ShoppingCart
                                         style={{ color: 'white' }}
                                     />
@@ -148,7 +148,7 @@ function Navbar({ cartItems, setCartItems }) {
                         </Badge>
                             :
                             <IconButton sx={{ p: 0 }}>
-                                <Link to="/cart">            
+                                <Link to="/cart">
                                     <ShoppingCart
                                         style={{ color: 'white' }}
                                     />

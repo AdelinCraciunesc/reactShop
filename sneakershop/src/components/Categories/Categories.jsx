@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Card, CardContent, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import CategoryCard from '../CategoryCard/CategoryCard';
 import "./Categories.css"
 

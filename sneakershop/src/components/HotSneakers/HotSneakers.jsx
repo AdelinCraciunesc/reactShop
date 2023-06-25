@@ -11,7 +11,6 @@ import "./HotSneakers.css";
 import Badge from '@mui/material/Badge';
 import { Button } from "@mui/material";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import IconButton from '@mui/material/IconButton';
 
 export default function HotSneakers({ sneakers, cartItems, setCartItems }) {
 

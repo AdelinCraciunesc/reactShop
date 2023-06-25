@@ -15,14 +15,6 @@ function ImageSlider({ text, images, delay }) {
     return () => clearInterval(timer);
   }, [index, imagesLength, delay]);
 
-  const handlePrev = () => {
-    setIndex((index - 1 + imagesLength) % imagesLength);
-  };
-
-  const handleNext = () => {
-    setIndex((index + 1) % imagesLength);
-  };
-
   if (!Array.isArray(images) || images.length <= 0) {
     return null;
   }

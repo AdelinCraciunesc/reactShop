@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { ShoppingCart } from '@mui/icons-material';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import Badge from '@mui/material/Badge';
+import { Link, useHistory } from "react-router-dom";
 
 function Navbar({ cartItems, setCartItems }) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -138,16 +139,20 @@ function Navbar({ cartItems, setCartItems }) {
                     <Box sx={{ flexGrow: 0 }}>
                         {cartItems > 0 ? <Badge badgeContent={cartItems} color="primary">
                             <IconButton sx={{ p: 0 }}>
-                                <ShoppingCart
-                                    style={{ color: 'white' }}
-                                />
+                                <Link to="/cart">            
+                                    <ShoppingCart
+                                        style={{ color: 'white' }}
+                                    />
+                                </Link>
                             </IconButton>
                         </Badge>
                             :
                             <IconButton sx={{ p: 0 }}>
-                                <ShoppingCart
-                                    style={{ color: 'white' }}
-                                />
+                                <Link to="/cart">            
+                                    <ShoppingCart
+                                        style={{ color: 'white' }}
+                                    />
+                                </Link>
                             </IconButton>
                         }
                     </Box>

@@ -146,15 +146,6 @@ function Navbar({ cartItems, setCartItems }) {
                                 </Link>
                             </IconButton>
                         </Badge>
-                        :
-                        <IconButton sx={{ p: 0 }}>
-                            <Link to="/cart">
-                                <ShoppingCart
-                                    style={{ color: 'white' }}
-                                />
-                            </Link>
-                        </IconButton>
-                        }
                     </Box>
                 </Toolbar>
             </Container>

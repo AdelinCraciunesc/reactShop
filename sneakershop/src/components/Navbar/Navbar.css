@@ -1,3 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lato:wght@100;300;700&family=Nunito:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lato:wght@100;300;700&family=Nunito:wght@300;400;600&display=swap");
+
+#menu-nav {
+    display: none;
+}
+
+#menu-nav::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid black;
+}
+
+.menu-icon:hover #menu-nav {
+    background-color: black;
+    position: absolute;
+    top: 85%;
+    right: 0;
+    width: auto;
+    display: grid;
+    align-content: center;
+    padding: 5px;
+    z-index: 999999; /* most front !Important */
+}
+
+.menu-list a {
+    padding: 15px 0 15px 15px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #ececec;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.menu-list a:nth-child(4) {
+    border-bottom: none;
+}
+
+.menu-list a:hover {
+    padding-left: 30px;
+}

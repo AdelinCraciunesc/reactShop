@@ -158,11 +158,11 @@ function Navbar({ firstThreeSneakers , cartItems, setCartItems }) {
                 <Badge
                   badgeContent={cartItems > 0 ? cartItems : null}
                   color="primary"
-                  className="cart-icon"
+                  sx={{p:0}}
                 >
-                  <IconButton>
+                  <IconButton sx={{ p:0 }}>
                     <Link to="/cart">
-                      <ShoppingCart style={{ color: "white" }} />
+                      <ShoppingCart style={{ color: "white",p:0 }} />
                     </Link>
                   </IconButton>
                 </Badge>

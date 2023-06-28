@@ -16,11 +16,10 @@ import Badge from "@mui/material/Badge";
 import CartCard from "../CartCard/CartCard";
 import { Link, useHistory, useLocation } from "react-router-dom";
 
-function Navbar({ firstThreeSneakers , cartItems, setCartItems }) {
+function Navbar({ firstThreeSneakers, cartItems, setCartItems }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   //use location to disable cart button on /cart page
   const location = useLocation();
-
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -158,19 +157,23 @@ function Navbar({ firstThreeSneakers , cartItems, setCartItems }) {
                 <Badge
                   badgeContent={cartItems > 0 ? cartItems : null}
                   color="primary"
-                  sx={{p:0}}
+                  sx={{ p: 0 }}
                 >
-                  <IconButton sx={{ p:0 }}>
+                  <IconButton sx={{ p: 0 }}>
                     <Link to="/cart">
-                      <ShoppingCart style={{ color: "white",p:0 }} />
+                      <ShoppingCart style={{ color: "white", p: 0 }} />
                     </Link>
                   </IconButton>
                 </Badge>
                 <div class="menu-list">
                   <nav id="menu-nav">
-                    {firstThreeSneakers.map((sneaker, index) => (
+                    <Typography>Last Added</Typography>
+                    <div className="card-wrap">
+                      {firstThreeSneakers.map((sneaker, index) => (
                         <CartCard key={sneaker.id} sneaker={sneaker} />
-                    ))}
+                      ))}
+                    </div>
+                    <Button sx={{color: "#eb5c52"}}>See All</Button>
                   </nav>
                 </div>
               </div>

@@ -20,30 +20,35 @@ const Sneakers = [
 
 const sneaker = Sneakers[0]
 export default function ShoppingCart() {
-    const [size, setSize] = React.useState('');
+    const [size, setSize] = React.useState(sneaker.size[0]);
     const [total, setTotal] = React.useState(1);
+    const [quantity, setQuantity] = React.useState(1);  // ADD LOGIC WHEN OTHER SIZE IS CLICKED => NEW PRODUCT ADDED //
 
     const handleChange = (event) => {
         console.log(event.target.value)
-        setSize(event.target.value);
+        setQuantity(event.target.value);
     };
 
     function handleIncrement() {
-        setTotal(total + 1);
+        setQuantity(quantity + 1);
     }
     function handleDecrement() {
-        setTotal(total - 1);
-        if (total <= 1) {
-            setTotal(1);
+        setQuantity(quantity - 1);
+        if (quantity <= 1) {
+            setQuantity(1);
         }
     }
 
+    function handleSelect(event) {
+        setSize(event.target.value);
+    }
+
     return (
-        <Container sx={{ mt: 2 }}>
-            <table>
+        <Container className='shopping-cart-container' sx={{ mt: 2 }}>
+            <table className='table-container'>
                 <thead>
                     <tr className='t-top-row'>
-                        <th>Your products</th>
+                        <th>Your products</th>  {/* add product title above or under image later */}
                         <th>Size</th>
                         <th>Quantity</th>
                         <th>Price</th>
@@ -53,19 +58,16 @@ export default function ShoppingCart() {
                 <tbody>
                     <tr>
                         <td>
-                            <img style={{ width: '200px' }} src={sneaker.image} />
+                            <img className='sc-image' src={sneaker.image} />
                         </td>
                         <td>
                             <div>
-                                <FormControl sx={{ m: 1, minWidth: 80 }}>
-                                    <InputLabel id="size-label">Size</InputLabel>
+                                <FormControl className='size-selector'>
                                     <Select
-                                        labelId="size-select-label"
                                         id="select-id"
                                         value={size}
-                                        onChange={handleChange}
+                                        onChange={handleSelect}
                                         autoWidth
-                                        label="Size"
                                     >
                                         {sneaker.size.map((size, index) => (
                                             <MenuItem key={index} value={size}>{size}</MenuItem>
@@ -77,11 +79,16 @@ export default function ShoppingCart() {
                         <td>
                             {/* add functionality later for quantity */}
                             <div className='quantity-selector'>
-                                <Button onClick={handleIncrement} sx={{ fontSize: '1.25rem', padding: 0, minWidth: 35 }} variant="contained" size="small" color="success">
+                                <Button sx={{ width: 30, minHeight: 0, minWidth: 0, padding: 0 }} className='qty-btn' onClick={handleIncrement}
+
+                                    variant="text" color="success">
                                     +
                                 </Button>
-                                <div>{total}</div>
-                                <Button onClick={handleDecrement} sx={{ fontSize: '1.25rem', padding: 0, minWidth: 35 }} variant="contained" size="small" color="error">
+                                <div className='quantity-wrap'>
+                                    {quantity}
+                                </div>
+                                <Button sx={{ width: 30, minHeight: 0, minWidth: 0, padding: 0 }} className='qty-btn' onClick={handleDecrement}
+                                    variant="text" color="error">
                                     -
                                 </Button>
                             </div>

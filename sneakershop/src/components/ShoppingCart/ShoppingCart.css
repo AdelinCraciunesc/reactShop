@@ -91,3 +91,31 @@
         gap: 0.25rem;
     }
 }
+
+.adress-div {
+    background-color: rgb(55, 55, 55);
+    padding: 1rem;
+    color: azure;
+    font-family: Roboto;
+}
+
+.adress-div p {
+    background-color: rgb(55, 55, 55);
+    padding: 1rem;
+    color: azure;
+    font-family: Roboto;
+}
+
+.adress-details-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.delivery-div {
+    margin-top: 1rem;
+    background-color: rgb(55, 55, 55);
+    padding: 1rem;
+    color: azure;
+    font-family: Roboto;
+}

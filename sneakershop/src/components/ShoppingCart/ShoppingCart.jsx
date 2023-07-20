@@ -6,6 +6,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
 
 const Sneakers = [
     {
@@ -17,6 +20,17 @@ const Sneakers = [
         brand: "https://www.freepnglogos.com/uploads/adidas-logo-png-black-0.png"
     }
 ]
+
+const adressDetails = {
+    fullName: "Your full name",
+    phoneNumber: "Your phone number",
+    country: "Your country",
+    city: "Your city",
+    street: "Your street",
+    postalCode: "Your postal code",
+}
+
+const adressArr = Object.values(adressDetails)
 
 const sneaker = Sneakers[0]
 export default function ShoppingCart() {
@@ -48,7 +62,7 @@ export default function ShoppingCart() {
             <table className='table-container'>
                 <thead>
                     <tr className='t-top-row'>
-                        <th>Your products</th>  {/* add product title above or under image later */}
+                        <th>1. Your products</th>  {/* add product title above or under image later */}
                         <th>Size</th>
                         <th>Quantity</th>
                         <th>Price</th>
@@ -103,53 +117,28 @@ export default function ShoppingCart() {
                     </tr>
                 </tbody>
             </table>
-
-            {/* <div className='cart-product'>
-                <p>Your products:</p>
-            </div> */}
-
-            {/* <Grid
-                container spacing={2}
-                display={'flex'}
-                alignItems={'center'}
-            >
-                <Grid item justifyContent='center' display={'flex'} flexDirection={'column'} alignItems={'center'}>
-                    <ButtonBase sx={{ width: 300, height: 300 }}>
-                        <img className='sc-image' alt="complex" src={sneaker.image} />
-                    </ButtonBase>
-                    <ButtonBase sx={{ width: 80, height: 40 }}>
-                        Remove
-                    </ButtonBase>
-                </Grid>
-                <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
-                        <Grid item xs>
-                            <Typography gutterBottom variant="subtitle1" component="div">
-                                Model: {sneaker.Model}
-                            </Typography>
-                            <FormControl sx={{ mt: 2, minWidth: 100 }}>
-                                <InputLabel id="demo-simple-select-label">Sizes</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={size}
-                                    label="Sizes"
-                                    onChange={handleChange}
-                                >
-                                    {sneaker.size.map((size, index) => (
-                                        <MenuItem key={index} value={size}>{size}</MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        </Grid>
-                    </Grid>
-                    <Grid item>
-                        <Typography variant="subtitle1" component="div">
-                            Total: {sneaker.price} €
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Grid> */}
+            <Box sx={{ flexGrow: 1 }}>
+                <div className='adress-div'>
+                    2. Your address
+                </div>
+                <p>Please enter your address:</p>
+                <div className='adress-details-div'>
+                    {adressArr.map((adress, index) => (
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Required"
+                            defaultValue={adress}
+                        />
+                    ))}
+                </div>
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
+                <div className='delivery-div'>
+                    3. Delivery method
+                </div>
+                <p>Please select your delivery method:</p>
+            </Box>
         </Container >
     );
 }

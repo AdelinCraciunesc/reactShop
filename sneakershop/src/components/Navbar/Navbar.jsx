@@ -41,8 +41,8 @@ function Navbar({ firstThreeSneakers, cartItems, setCartItems }) {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -55,7 +55,6 @@ function Navbar({ firstThreeSneakers, cartItems, setCartItems }) {
           >
             HeroSneakers
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -110,8 +109,8 @@ function Navbar({ firstThreeSneakers, cartItems, setCartItems }) {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href=""
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -173,7 +172,7 @@ function Navbar({ firstThreeSneakers, cartItems, setCartItems }) {
                         <CartCard key={sneaker.id} sneaker={sneaker} />
                       ))}
                     </div>
-                    <Button sx={{color: "#eb5c52"}}>See All</Button>
+                    <Button sx={{ color: "#eb5c52" }}>See All</Button>
                   </nav>
                 </div>
               </div>

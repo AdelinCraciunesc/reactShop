@@ -40,6 +40,7 @@ const App = () => {
     }
   ];
 
+  // Maybe add useHistory to hide url params
   return (
     <div>
       <NavbarTop />

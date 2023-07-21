@@ -49,11 +49,13 @@ export default function Categories() {
         )
       })} */}
       <Grid item>
-        <CategoryCard
-          title={cardInfo[0].title}
-          desc={cardInfo[0].description}
-          img={cardInfo[0].img}
-        />
+        <Link to="/kids">
+          <CategoryCard
+            title={cardInfo[0].title}
+            desc={cardInfo[0].description}
+            img={cardInfo[0].img}
+          />
+        </Link>
       </Grid>
       <Grid item>
         <Link to="/men">
@@ -65,11 +67,13 @@ export default function Categories() {
         </Link>
       </Grid>
       <Grid item>
-        <CategoryCard
-          title={cardInfo[2].title}
-          desc={cardInfo[2].description}
-          img={cardInfo[2].img}
-        />
+        <Link to="/women">
+          <CategoryCard
+            title={cardInfo[2].title}
+            desc={cardInfo[2].description}
+            img={cardInfo[2].img}
+          />
+        </Link>
       </Grid>
     </Grid>
   );

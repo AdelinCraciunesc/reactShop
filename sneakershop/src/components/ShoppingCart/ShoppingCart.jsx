@@ -4,6 +4,10 @@ import './ShoppingCart.css';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -37,11 +41,11 @@ export default function ShoppingCart() {
     const [size, setSize] = React.useState(sneaker.size[0]);
     const [total, setTotal] = React.useState(1);
     const [quantity, setQuantity] = React.useState(1);  // ADD LOGIC WHEN OTHER SIZE IS CLICKED => NEW PRODUCT ADDED //
+    const [value, setValue] = React.useState('');
 
-    const handleChange = (event) => {
-        console.log(event.target.value)
-        setQuantity(event.target.value);
-    };
+    const handleRadioBtns = (event) => {
+        setValue(event.target.value);
+      };
 
     function handleIncrement() {
         setQuantity(quantity + 1);
@@ -127,8 +131,7 @@ export default function ShoppingCart() {
                         <TextField
                             required
                             id="outlined-required"
-                            label="Required"
-                            defaultValue={adress}
+                            label={adress}
                         />
                     ))}
                 </div>
@@ -138,6 +141,33 @@ export default function ShoppingCart() {
                     3. Delivery method
                 </div>
                 <p>Please select your delivery method:</p>
+                <FormControl>
+      <RadioGroup
+        aria-labelledby="demo-controlled-radio-buttons-group"
+        name="controlled-radio-buttons-group"
+        onChange={handleRadioBtns}
+      >
+        <FormControlLabel value="fan" control={<Radio />} label="Fan Courier - Free Delivery" />
+        <FormControlLabel value="cargus" control={<Radio />} label="Cargus - Ships the next day" />
+        <FormControlLabel value="dhl" control={<Radio />} label="DHL - 2 to 4 days to ship" />
+      </RadioGroup>
+    </FormControl>
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
+                <div className='delivery-div'>
+                    4. Payment method
+                </div>
+                <p>Please select your payment method:</p>
+                <FormControl>
+      <RadioGroup
+        aria-labelledby="demo-controlled-radio-buttons-group"
+        name="controlled-radio-buttons-group"
+        onChange={handleRadioBtns}
+      >
+        <FormControlLabel value="fiat" control={<Radio />} label="Pay on delivery ($2 Fee)" />
+        <FormControlLabel value="card" control={<Radio />} label="Online payment with card (Free)" />
+      </RadioGroup>
+    </FormControl>
             </Box>
         </Container >
     );

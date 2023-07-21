@@ -6,6 +6,12 @@
     background-color: rgb(201, 211, 211);
 }
 
+@media screen and (max-width: 600px) {
+    .navbar-top {
+        flex-direction: column;
+    }
+}
+
 .icon {
     margin-left: 1rem;
     margin-right: 1rem;

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import NavbarTop from "./components/NavbarTop/NavbarTop";
 import { Routes, Route } from "react-router-dom";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import MenProducts from "./pages/MenProducts";
 import Home from "./pages/Home";
 
 const App = () => {
@@ -60,6 +61,10 @@ const App = () => {
           element={
             <ShoppingCart cartItems={cartItems} setCartItems={setCartItems} />
           }
+        />
+        <Route
+          path="/men"
+          element={<MenProducts cartItems={cartItems} setCartItems={setCartItems} />}
         />
       </Routes>
     </div>
